@@ -1,4 +1,4 @@
-codeunit 50100 "Message Method"
+codeunit 50110 "Message Method"
 {
     Subtype = Normal;
     Access = Internal;

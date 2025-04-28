@@ -6,6 +6,8 @@ codeunit 50108 "List Functions"
     trigger OnRun()
     var
         MyList: List of [Integer];
+        myTextList: List of [Text[100]];
+        CheckCompany: Text[100];
 
     begin
         MyList.Add(1);
@@ -14,8 +16,17 @@ codeunit 50108 "List Functions"
         MyList.Add(4);
         MyList.Add(5);
 
+        CheckCompany := CompanyName;
+
+        myTextList.Add('Hello');
+        myTextList.Add('Dynamics');
+        myTextList.Add('Business Central');
+
+        myTextList.Set(2, 'Microsoft Dynamics 365');
+
         // Example usage of List functions
         Message('Count: %1', MyList.Count()); // Returns 5
+        // Get(index) function
         Message('First: %1', MyList.Get(1)); // Returns 1
 
 
