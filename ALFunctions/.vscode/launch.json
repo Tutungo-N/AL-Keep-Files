@@ -9,7 +9,7 @@
             "server": "http://BCOnPrem",
             "serverInstance": "BC",
             "authentication": "UserPassword",
-            "startupObjectId": 50100,
+            "startupObjectId": 22,
             "startupObjectType": "Page",
             "breakOnError": "All",
             "launchBrowser": true,

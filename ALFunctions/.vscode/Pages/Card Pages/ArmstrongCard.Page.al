@@ -15,9 +15,10 @@ page 50100 "Armstrong Card Page"
     }
     trigger OnOpenPage()
     var
+        TryMethodExecution: Codeunit "Try Method Execution";
         Counter1: Integer;
         CounterText: Text[10];
-        Couunter2: Integer;
+        Counter2: Integer;
         PowerNumber: Integer;
         Number: Integer;
         Result: Integer;
@@ -26,6 +27,7 @@ page 50100 "Armstrong Card Page"
         ch10, ch13 : Char;
         NewLine: Text[10];
     begin
+        TryMethodExecution.TryMethod(); // Call the TryMethod from the codeunit
 
         ch10 := 10;
         ch13 := 13;
@@ -34,8 +36,8 @@ page 50100 "Armstrong Card Page"
         for Counter1 := 0 to 10000 do begin
             CounterText := Format(Counter1);
             Evaluate(PowerNumber, CopyStr(CounterText, StrLen(CounterText), 1));
-            for Couunter2 := 1 to StrLen(CounterText) do begin
-                Evaluate(Number, CopyStr(CounterText, Couunter2, 1));
+            for Counter2 := 1 to StrLen(CounterText) do begin
+                Evaluate(Number, CopyStr(CounterText, Counter2, 1));
                 Result += Power(Number, PowerNumber);
             end;
 
