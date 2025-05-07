@@ -35,23 +35,23 @@ pageextension 50101 "Customer Card Ext" extends "Customer Card"
 
     local procedure CallUpdateCreditLimit()
     var
-        MCalculatedCreditLimit: Decimal;
-        MActualCreditLimit: Decimal;
+        CalculatedCreditLimit: Decimal;
+        ActualCreditLimit: Decimal;
     begin
-        MCalculatedCreditLimit := Rec.CalculateCreditLimit();
-        if MCalculatedCreditLimit = Rec."Credit Limit (LCY)" then begin
+        CalculatedCreditLimit := Rec.CalculateCreditLimit();
+        if CalculatedCreditLimit = Rec."Credit Limit (LCY)" then begin
             Message(CreditLimitUpToDateText);
             exit;
         end;
 
         if GuiAllowed() then
-            if not Confirm(AreYouSureQuest, false, Rec.FieldCaption("Credit Limit (LCY)"), MCalculatedCreditLimit) then
+            if not Confirm(AreYouSureQuest, false, Rec.FieldCaption("Credit Limit (LCY)"), CalculatedCreditLimit) then
                 exit;
 
-        MActualCreditLimit := MCalculatedCreditLimit;
-        Rec.UpdateCreditLimit(MActualCreditLimit);
-        if MActualCreditLimit <> MCalculatedCreditLimit then
-            Message(CreditLimitRoundedText, MActualCreditLimit);
+        ActualCreditLimit := CalculatedCreditLimit;
+        Rec.UpdateCreditLimit(ActualCreditLimit);
+        if ActualCreditLimit <> CalculatedCreditLimit then
+            Message(CreditLimitRoundedText, ActualCreditLimit);
 
     end;
 }

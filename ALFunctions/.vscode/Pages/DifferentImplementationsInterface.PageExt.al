@@ -1,4 +1,4 @@
-/*pageextension 50101 "My Customer List Extension" extends "Customer List"
+/*pageextension 50105 "My Customer List Extension" extends "Customer List"
 {
     layout
     {
